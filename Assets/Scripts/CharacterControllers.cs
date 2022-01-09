@@ -57,7 +57,7 @@ public class CharacterControllers : MonoBehaviour
 
     private void GamingGravity() // гравитация персонажа
     {
-        if (!_chContoller.isGrounded) _gravitiForce -= 20f ;// проверка персонажа на гравитацию
+        if (!_chContoller.isGrounded) _gravitiForce -= 20f * Time.deltaTime  ;// проверка персонажа на гравитацию
         else _gravitiForce = -1f; //после приземления сила гравитации -1
         if (Input.GetKeyDown(KeyCode.Space) && _chContoller.isGrounded) _gravitiForce = _jumpForse; // прыжок персонажа
 
