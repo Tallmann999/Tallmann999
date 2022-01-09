@@ -30,6 +30,9 @@ public class CharacterControllers : MonoBehaviour
     {
         if (_chContoller.isGrounded) // ограничение движения во время прыжка
         {
+            _chAnimator.ResetTrigger("Jump");// отмена тригерра в аниматоре jump
+            _chAnimator.SetBool("Falling", false);
+
             // Перемещение по поверхности
             _moveVector = Vector3.zero; // обновление вектора движения
             _moveVector.x = Input.GetAxis("Horizontal") * _speedMove ; //оси движения персонажа
@@ -49,6 +52,10 @@ public class CharacterControllers : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(direct);// поворот вектрора
             }
         }
+        else
+        {
+            if (_gravitiForce < -3f) _chAnimator.SetBool("Falling", true);
+        }
             _moveVector.y = _gravitiForce;// расчёт гравитации выполнять после поворота!!!
             _chContoller.Move(_moveVector* Time.deltaTime) ; //метод передвижения по направлению
         
@@ -59,7 +66,11 @@ public class CharacterControllers : MonoBehaviour
     {
         if (!_chContoller.isGrounded) _gravitiForce -= 20f * Time.deltaTime  ;// проверка персонажа на гравитацию
         else _gravitiForce = -1f; //после приземления сила гравитации -1
-        if (Input.GetKeyDown(KeyCode.Space) && _chContoller.isGrounded) _gravitiForce = _jumpForse; // прыжок персонажа
+        if (Input.GetKeyDown(KeyCode.Space) && _chContoller.isGrounded)
+        {
+            _gravitiForce = _jumpForse; // прыжок персонажа
+            _chAnimator.SetTrigger("Jump"); // тригер в анимации jump
+        }
 
     }
 }
