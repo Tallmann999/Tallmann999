@@ -1313,8 +1313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8807802196520741110}
   - component: {fileID: 4557974464797653731}
-  - component: {fileID: 4557974464797653729}
-  - component: {fileID: -7991301940353875403}
+  - component: {fileID: 313607770804289993}
   m_Layer: 0
   m_Name: paladin_j_nordstrom
   m_TagString: Untagged
@@ -1330,7 +1329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5503610634577697509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04854351, y: 1.11, z: -7.265142}
+  m_LocalPosition: {x: 0.04854351, y: 1.405, z: -7.265142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 252128066987816854}
@@ -1358,22 +1357,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4557974464797653729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5503610634577697509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb07b541d5faac4419172c644f4dec11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speedMove: 4
-  _jumpForse: 5
---- !u!143 &-7991301940353875403
-CharacterController:
+--- !u!65 &313607770804289993
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1383,13 +1368,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.2
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 0.49, y: -1.52, z: 0.31}
+  m_Center: {x: 0, y: 0.71, z: 0}
 --- !u!1 &5506244881162470955
 GameObject:
   m_ObjectHideFlags: 0
